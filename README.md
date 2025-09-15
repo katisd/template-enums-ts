@@ -10,8 +10,11 @@
 ## Getting Started
 
 1. Go to repository setting > Actions > General > Workflow permissions > Select `Read and write permissions` and click `Save`. This allow pipeline to automatically update package version.
-2. Search for `{{USER_NAME}}` in code and replace with your github username.
-3. Change package name in `package.json` to name of your package.
+<img width="506" height="229" alt="image" src="https://github.com/user-attachments/assets/5f92b83e-f168-4b7f-9f88-e9924780afb0" />
+<img width="1325" height="553" alt="image" src="https://github.com/user-attachments/assets/7c1349e3-754f-459c-a661-593146ca9492" />
+
+3. Search for `{{USER_NAME}}` in code and replace with your github username.
+4. Change package name in `package.json` to name of your package.
 
 ```
 {
@@ -21,6 +24,7 @@
 ```
 
 4. Commit your first change to trigger pipeline to deploy package. After that you should see package in gitlab repository.
+<img width="525" height="182" alt="image" src="https://github.com/user-attachments/assets/f6f606f5-664f-4a48-827e-0f745007be0e" />
 
 ## How to download and install this package
 
