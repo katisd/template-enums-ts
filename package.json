@@ -1,11 +1,11 @@
 {
-  "name": "@katisd/template_enums_test_libs",
+  "name": "@{{USER_NAME}}/template_enums_test_libs",
   "version": "1.0.164",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@katisd"
+    "registry": "https://npm.pkg.github.com/@{{USER_NAME}}"
   },
   "files": [
     "dist"

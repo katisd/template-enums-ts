@@ -1,42 +1,58 @@
 ﻿# ESI_COMMON
 
-- [Usage](#usage)
+- [Getting Started](#getting-started)
+- [How to download and install this package](#how-to-download-and-install-this-package)
 - [How to use this package](#how-to-use-this-package)
 - [How to generate a Token (Only for package owner)](#how-to-generate-a-token-only-for-package-owner)
 - [How to add data](#how-to-add-data)
 - [Package versioning](#package-versioning)
 
-## Usage
+## Getting Started
+
+1. Go to repository setting > Actions > General > Workflow permissions > Select `Read and write permissions` and click `Save`. This allow pipeline to automatically update package version.
+2. Search for `{{USER_NAME}}` in code and replace with your github username.
+3. Change package name in `package.json` to name of your package.
+
+```
+{
+  "name": "@{{USER_NAME}}/esi_common",
+  ...
+}
+```
+
+4. Commit your first change to trigger pipeline to deploy package. After that you should see package in gitlab repository.
+
+## How to download and install this package
 
 | **Note: This is a private package so it needs a Token that has read permission from the package owner to install and update**
 
 1. Put Token in file `.npmrc`
 
 ```
-@npinyada:registry=https://npm.pkg.github.com/
+@{{USER_NAME}}:registry=https://npm.pkg.github.com/
 //npm.pkg.github.com/:_authToken={{YOUR_TOKEN}}
 ```
 
 2. Install package
 
 ```
-npm install @npinyada/esi_common
+npm install @{{USER_NAME}}/esi_common
 ```
 
 3. PLease regularly update package to latest version.
 
 ```
-npm install @npinyada/esi_common@latest
+npm install @{{USER_NAME}}/esi_common@latest
 ```
 
 ## How to use this package
 
-import from `import e from "@npinyada/esi_common"`
+import from `import e from "@{{USER_NAME}}/esi_common"`
 
 1. to get a value
 
 ```typescript
-import e from "@npinyada/esi_common";
+import e from "@{{USER_NAME}}/esi_common";
 
 e.Gender.enums.Male; // 1
 ```
@@ -44,7 +60,7 @@ e.Gender.enums.Male; // 1
 3. to get a `enum object` from `enum code` with default object
 
 ```ts
-import e from "@npinyada/esi_common";
+import e from "@{{USER_NAME}}/esi_common";
 
 // Gender.getEnumValue(string | number, defaultObject)
 e.Gender.getEnumValue("Male"); // {value:1, th:"ชาย",en:"male"}
@@ -58,7 +74,7 @@ e.Gender.getEnumValue("MaleMale", {
 4. to get a `enum object` from `enum value` with default object
 
 ```ts
-import e from "@npinyada/esi_common";
+import e from "@{{USER_NAME}}/esi_common";
 
 e.Gender.getEnumValue(1); // {value:1, th:"ชาย", en:"male"}
 e.Gender.getEnumValue(0); // {value:0, th:"ไม่ระบุ", en:"not specified"}
@@ -74,7 +90,7 @@ e.Gender.getEnumValue(100); // {value:-1, th:"not found",en:"not found"}
 5. to get a list of `enum object`
 
 ```ts
-import e from "@npinyada/esi_common";
+import e from "@{{USER_NAME}}/esi_common";
 
 const genderArr = e.Gender.entries;
 // [{key: "Male", value : 1, th: "ชาย", en: "male"},
@@ -86,7 +102,7 @@ const genderArr = e.Gender.entries;
 
 ```ts
 // file `dto/something.dto.ts`
-import e from "@npinyada/esi_common"
+import e from "@{{USER_NAME}}/esi_common"
 
 export class SomethingDto{
   ...
@@ -100,16 +116,16 @@ export class SomethingDto{
 
 1. Go to settings
 
-![image](https://github.com/npinyada/ESI_COMMON/assets/90249534/4118cc43-87b5-49f2-a68b-bbe065cdae57)
+![image](https://github.com/{{USER_NAME}}/ESI_COMMON/assets/90249534/4118cc43-87b5-49f2-a68b-bbe065cdae57)
 
 2. Settings > Developer Settings > Personal access tokens > Tokens (Classic)
 
-![image](https://github.com/npinyada/ESI_COMMON/assets/90249534/561a076c-489e-4b7d-ba0d-d9b7ee3ec25f)
+![image](https://github.com/{{USER_NAME}}/ESI_COMMON/assets/90249534/561a076c-489e-4b7d-ba0d-d9b7ee3ec25f)
 
 3. Generate a token with a name and desired expiration date.
 4. Select permission to read a package.
 
-![image](https://github.com/npinyada/ESI_COMMON/assets/90249534/49e622bb-f240-4084-9c2b-cfa3d329d465)
+![image](https://github.com/{{USER_NAME}}/ESI_COMMON/assets/90249534/49e622bb-f240-4084-9c2b-cfa3d329d465)
 
 ## How to add data
 
@@ -186,7 +202,7 @@ const e={
 
 ```
 {
-  "name": "@npinyada/esi_common",
+  "name": "@{{USER_NAME}}/esi_common",
   "version": "1.0.14",
   ...
 }
