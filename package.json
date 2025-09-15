@@ -1,6 +1,6 @@
 {
   "name": "@katisd/template_enums_test_libs",
-  "version": "1.0.164",
+  "version": "1.0.165",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
